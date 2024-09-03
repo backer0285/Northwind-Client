@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // uncheck all boxes by default (Firefox)
     document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
-    
+
     // event listener for check/uncheck
     document.getElementById('checkbox-card').addEventListener('change', function (e) {
         if (e.target.classList.contains('form-check-input')) {
@@ -20,4 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 elem.classList.add("animate__animated", "animate__bounceOutUp");
         }
     });
+
+    // toast
+    document.getElementById('submit').addEventListener('click', function (e) {
+        if (e.target.classList.contains('balloon-submit')) {
+
+            if (!document.getElementById("red").checked && !document.getElementById("green").checked && !document.getElementById("blue").checked) {
+                e.preventDefault();
+                bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
+            }
+        }
+    });
 });
+
