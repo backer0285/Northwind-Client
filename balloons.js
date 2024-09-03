@@ -31,12 +31,34 @@ document.addEventListener("DOMContentLoaded", function () {
     // toast
     document.getElementById('submit').addEventListener('click', function (e) {
         if (e.target.classList.contains('balloon-submit')) {
-
             if (!document.getElementById("red").checked && !document.getElementById("green").checked && !document.getElementById("blue").checked) {
                 e.preventDefault();
                 bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
             }
         }
     });
+
+    // mouse over color
+    const redCheck = document.getElementById('red-box');
+    redCheck.addEventListener('mouseover', function(e){
+        document.getElementById('heading').classList.add('text-danger');
+    })
+    redCheck.addEventListener('mouseout', function(e){
+        document.getElementById('heading').classList.remove('text-danger');
+    })
+    const greenCheck = document.getElementById('green-box');
+    greenCheck.addEventListener('mouseover', function(e){
+        document.getElementById('heading').classList.add('text-success');
+    })
+    greenCheck.addEventListener('mouseout', function(e){
+        document.getElementById('heading').classList.remove('text-success');
+    })
+    const blueCheck = document.getElementById('blue-box');
+    blueCheck.addEventListener('mouseover', function(e){
+        document.getElementById('heading').classList.add('text-primary');
+    })
+    blueCheck.addEventListener('mouseout', function(e){
+        document.getElementById('heading').classList.remove('text-primary');
+    })
 });
 
