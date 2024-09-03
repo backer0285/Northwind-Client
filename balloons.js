@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // uncheck all boxes by default (Firefox)
     document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
 
+    // attention seeker
+    const seekers = ["animate__bounce", "animate__flash", "animate__pulse", "animate__rubberBand", , "animate__shakeX", , "animate__shakeY",
+        "animate__headShake", "animate__swing", "animate__tada", "animate__wobble", "animate__jello", "animate__heartBeat"
+    ];
+    let seeker = Math.floor(Math.random() * 3);
+    document.getElementById('heading').classList.add(seekers[seeker]);
+
     // event listener for check/uncheck
     document.getElementById('checkbox-card').addEventListener('change', function (e) {
         if (e.target.classList.contains('form-check-input')) {
