@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // event listener for check all/uncheck all
+    document.getElementById('check-all').addEventListener('click', function(e) {
+        document.querySelectorAll('.form-check-input').forEach(c => c.checked = true);
+    })
+    document.getElementById('uncheck-all').addEventListener('click', function(e) {
+        document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
+    })
+
     // toast
     document.getElementById('submit').addEventListener('click', function (e) {
         if (e.target.classList.contains('balloon-submit')) {
